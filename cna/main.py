@@ -70,6 +70,7 @@ class Application:
         img_label=builder2.get_object("label_img")
         img_label.new_image = tk.PhotoImage(file="hhh1.png")
         img_label.config(image=img_label.new_image)
+        self.top3.iconbitmap('hhh1.ico')
         callbacks = {}
         builder2.connect_callbacks(callbacks)
 
@@ -234,4 +235,6 @@ class Application:
 if __name__ == '__main__' :
     root=tk.Tk()
     app=Application(root)
+    root.iconbitmap('hhh1.ico')
+    root.title("Convertisseur Numerique Analogique R-2R")
     root.mainloop()
