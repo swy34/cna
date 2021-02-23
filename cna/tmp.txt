@@ -1,0 +1,40 @@
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy import interpolate
+
+
+
+
+seq_bin="010010010101110101011101011010101010111000101011101101000101010010101010001010111010101111110101010101010101010101010111010000101000100101111"
+longueur=len(seq_bin)
+abscisse=[i+1 for i in range(0,int(len(seq_bin)/2),2)]
+V_sortie=[]
+V_ref=10 #10V
+R=5 #5 ohm
+for k in range(int(longueur/4)) :
+  indice=k*4
+  i3=(V_ref*int(seq_bin[indice]))/(4*R)
+  i2=(V_ref*int(seq_bin[indice+1]))/(8*R)
+  i1=(V_ref*int(seq_bin[indice+2]))/(16*R)
+  i0=(V_ref*int(seq_bin[indice+3]))/(32*R)
+  V_sortie.append(2*R*(i3+i2+i1+i0))
+
+
+
+
+
+bin=[int(seq_bin[i]) for i in range(longueur)]
+x_bin=[i for i in range(0,longueur*10,10)]
+plt.figure(figsize=[18,3])
+plt.ylim(-0.5,1.5)
+plt.step(x_bin,bin)
+
+
+
+
+
+x_new = np.linspace(1, longueur/4, 300)
+a_BSpline = interpolate.make_interp_spline(abscisse,V_sortie)
+V_s = a_BSpline(x_new)
+plt.ylabel("Tension (V)")
+plt.plot(x_new, V_s)

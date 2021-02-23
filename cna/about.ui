@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='utf-8'?>
+<interface version="1.0">
+  <object class="ttk.Frame" id="frame_1">
+    <property name="height">400</property>
+    <property name="width">320</property>
+    <layout manager="pack">
+      <property name="propagate">False</property>
+      <property name="side">top</property>
+    </layout>
+    <child>
+      <object class="ttk.Label" id="label_4">
+        <property name="font">{times new roman} 16 {bold underline}</property>
+        <property name="text" translatable="yes">À propos:</property>
+        <property name="width">320</property>
+        <layout manager="pack">
+          <property name="propagate">True</property>
+          <property name="side">top</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Label" id="label_img">
+        <property name="anchor">center</property>
+        <property name="font">TkDefaultFont</property>
+        <property name="image">hhh1.png</property>
+        <property name="text" translatable="yes">label_3</property>
+        <layout manager="pack">
+          <property name="propagate">True</property>
+          <property name="side">top</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Label" id="label_1">
+        <property name="font">{Cambria} 16 {bold}</property>
+        <property name="text" translatable="yes">CNA R-2R à 4Bits</property>
+        <layout manager="pack">
+          <property name="propagate">True</property>
+          <property name="side">top</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Frame" id="frame_6">
+        <property name="height">200</property>
+        <property name="width">200</property>
+        <layout manager="pack">
+          <property name="propagate">True</property>
+          <property name="side">top</property>
+        </layout>
+        <child>
+          <object class="ttk.Label" id="label_2">
+            <property name="cursor">arrow</property>
+            <property name="font">{times new roman} 12 {}</property>
+            <property name="text" translatable="yes">Cette application a été réalisé dans le cadre d'un projet concernant le traitement numrique du signal.
+Il a pour but de simuler la conversion numerique analogique d'un CNA R-2R à 4bits
+</property>
+            <property name="wraplength">320</property>
+            <layout manager="grid">
+              <property name="propagate">True</property>
+              <property name="sticky">w</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Label" id="label_5">
+        <property name="font">{times new roman} 12 {bold underline}</property>
+        <property name="text" translatable="yes">Réalisé par :</property>
+        <property name="width">320</property>
+        <layout manager="pack">
+          <property name="propagate">True</property>
+          <property name="side">top</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Label" id="label_5_6">
+        <property name="font">{times new roman} 12 {}</property>
+        <property name="text" translatable="yes">KOUZI Yahya : étudiant en GSTR2 à ENSA Tanger</property>
+        <property name="width">320</property>
+        <layout manager="pack">
+          <property name="propagate">True</property>
+          <property name="side">top</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Label" id="label_5_7">
+        <property name="font">{times new roman} 12 {bold underline}</property>
+        <property name="text" translatable="yes">Encadrant :</property>
+        <property name="width">320</property>
+        <layout manager="pack">
+          <property name="propagate">True</property>
+          <property name="side">top</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Label" id="label_5_6_8">
+        <property name="font">{times new roman} 12 {}</property>
+        <property name="text" translatable="yes">Pr. MOUSSAOUI Mohammed : Enseignant à Ensa Tanger</property>
+        <property name="width">320</property>
+        <property name="wraplength">320</property>
+        <layout manager="pack">
+          <property name="propagate">True</property>
+          <property name="side">top</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Button" id="button_1">
+        <property name="command">reset</property>
+        <property name="idtocommand">false</property>
+        <property name="text" translatable="yes">Retour</property>
+        <layout manager="pack">
+          <property name="propagate">True</property>
+          <property name="side">top</property>
+        </layout>
+      </object>
+    </child>
+  </object>
+</interface>
