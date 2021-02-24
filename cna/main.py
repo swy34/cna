@@ -7,12 +7,22 @@ from matplotlib.backends.backend_tkagg import (
 from matplotlib.backend_bases import key_press_handler
 from matplotlib.figure import Figure
 from scipy import interpolate
+import os
+import sys
+
+try:
+    DATA_DIR = os.path.abspath(os.path.dirname(__file__))
+except NameError:
+    DATA_DIR = os.path.dirname(os.path.abspath(sys.argv[0]))
+
+UI_FILE = os.path.join(DATA_DIR, "interface.ui")
+ICON_FILE = os.path.join(DATA_DIR, 'imgs', 'hhh1.png')
 
 class Application:
     def __init__(self,master):
         self.master=master
         self.builder=builder=pygubu.Builder()
-        builder.add_from_file("interface.ui")
+        builder.add_from_file(UI_FILE)
         self.mainwindow=builder.get_object('main_frame',master)
         self.text=builder.get_object('text_1')
         self.browse = builder.get_object('btn_browse')
@@ -68,12 +78,14 @@ class Application:
         self.top3 = tk.Toplevel(self.mainwindow)
         frame3 = builder2.get_object('frame_abt',self.top3)
         img_label=builder2.get_object("label_img")
-        img_label.new_image = tk.PhotoImage(file="hhh1.png")
+        img_label.new_image = tk.PhotoImage(file="imgs/hhh1.png")
         img_label.config(image=img_label.new_image)
-        self.top3.iconbitmap('hhh1.ico')
+        self.top3.iconphoto(True, self.icon)
         callbacks = {}
         builder2.connect_callbacks(callbacks)
 
+    def quit_about(self):
+        self.top3.quit()
 
 
     def reset(self):
@@ -235,6 +247,7 @@ class Application:
 if __name__ == '__main__' :
     root=tk.Tk()
     app=Application(root)
-    root.iconbitmap('hhh1.ico')
+    app.icon = tk.PhotoImage(file=ICON_FILE)
+    root.iconphoto(True, app.icon)
     root.title("Convertisseur Numerique Analogique R-2R")
     root.mainloop()
