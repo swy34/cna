@@ -387,7 +387,6 @@
       <object class="ttk.Label" id="label_img">
         <property name="anchor">center</property>
         <property name="font">TkDefaultFont</property>
-        <property name="image">hhh1.png</property>
         <property name="text" translatable="yes">label_3</property>
         <layout manager="pack">
           <property name="propagate">True</property>
@@ -468,6 +467,19 @@ Il a pour but de simuler la conversion numerique analogique d'un CNA R-2R à 4bi
         <property name="text" translatable="yes">Pr. MOUSSAOUI Mohammed : Enseignant à Ensa Tanger</property>
         <property name="width">320</property>
         <property name="wraplength">320</property>
+        <layout manager="pack">
+          <property name="propagate">True</property>
+          <property name="side">top</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Button" id="button_1">
+        <property name="command">quit_about</property>
+        <property name="idtocommand">false</property>
+        <property name="state">normal</property>
+        <property name="takefocus">false</property>
+        <property name="text" translatable="yes">Retour</property>
         <layout manager="pack">
           <property name="propagate">True</property>
           <property name="side">top</property>
