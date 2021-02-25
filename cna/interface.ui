@@ -366,8 +366,8 @@
     </child>
   </object>
   <object class="ttk.Frame" id="frame_abt">
-    <property name="height">400</property>
-    <property name="width">320</property>
+    <property name="height">445</property>
+    <property name="width">330</property>
     <layout manager="pack">
       <property name="propagate">False</property>
       <property name="side">top</property>
@@ -429,6 +429,16 @@ Il a pour but de simuler la conversion numerique analogique d'un CNA R-2R à 4bi
       </object>
     </child>
     <child>
+      <object class="ttk.Separator" id="separator_1_2">
+        <property name="orient">horizontal</property>
+        <layout manager="pack">
+          <property name="fill">both</property>
+          <property name="propagate">False</property>
+          <property name="side">top</property>
+        </layout>
+      </object>
+    </child>
+    <child>
       <object class="ttk.Label" id="label_5_3">
         <property name="font">{times new roman} 12 {bold underline}</property>
         <property name="text" translatable="yes">Réalisé par :</property>
@@ -441,6 +451,7 @@ Il a pour but de simuler la conversion numerique analogique d'un CNA R-2R à 4bi
     </child>
     <child>
       <object class="ttk.Label" id="label_5_6">
+        <property name="anchor">w</property>
         <property name="font">{times new roman} 12 {}</property>
         <property name="text" translatable="yes">KOUZI Yahya : étudiant en GSTR2 à ENSA Tanger</property>
         <property name="width">320</property>
@@ -456,6 +467,7 @@ Il a pour but de simuler la conversion numerique analogique d'un CNA R-2R à 4bi
         <property name="text" translatable="yes">Encadrant :</property>
         <property name="width">320</property>
         <layout manager="pack">
+          <property name="pady">15 0</property>
           <property name="propagate">True</property>
           <property name="side">top</property>
         </layout>
@@ -469,6 +481,26 @@ Il a pour but de simuler la conversion numerique analogique d'un CNA R-2R à 4bi
         <property name="wraplength">320</property>
         <layout manager="pack">
           <property name="propagate">True</property>
+          <property name="side">top</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Label" id="label_1_2_3">
+        <property name="text" translatable="yes">2020-2021</property>
+        <layout manager="pack">
+          <property name="pady">5 10</property>
+          <property name="propagate">True</property>
+          <property name="side">top</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Separator" id="separator_1">
+        <property name="orient">horizontal</property>
+        <layout manager="pack">
+          <property name="fill">both</property>
+          <property name="propagate">False</property>
           <property name="side">top</property>
         </layout>
       </object>

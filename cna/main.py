@@ -73,6 +73,11 @@ class Application:
         builder.connect_callbacks(self)
 
     def about_window(self):
+        frame3=tk.Frame
+        try:
+            self.quit_about()
+        except:
+            ""
         builder2 = pygubu.Builder()
         builder2.add_from_file('interface.ui')
         self.top3 = tk.Toplevel(self.mainwindow)
@@ -82,10 +87,10 @@ class Application:
         img_label.config(image=img_label.new_image)
         self.top3.iconphoto(True, self.icon)
         callbacks = {}
-        builder2.connect_callbacks(callbacks)
+        builder2.connect_callbacks(self)
 
     def quit_about(self):
-        self.top3.quit()
+        self.top3.destroy()
 
 
     def reset(self):
@@ -110,8 +115,20 @@ class Application:
         self.toolbar = NavigationToolbar2Tk(canvas, canvas2)
         self.toolbar.update()
 
+        self.figure.subplots_adjust(top=0.886, right=0.976, bottom=0.22, left=0.129)
+        self.figure1.subplots_adjust(top=0.886, right=0.976, bottom=0.22, left=0.129)
+
+
         self.c1 = self.figure.add_subplot(111)
         self.c2 = self.figure1.add_subplot(111)
+
+        self.c1.set_ylabel("Tension (V)")
+        self.c1.set_xlabel("Instant t")
+        self.c1.set_title("Représentation du signal Analogique")
+
+        self.c2.set_ylabel("Symbole binaire")
+        self.c2.set_xlabel("Instant t")
+        self.c2.set_title("Représentation du signal Numérique")
         #self.V_sortie=[]
 
         #self.can1.draw()
@@ -123,14 +140,13 @@ class Application:
                 #######courbe binaire
                 bin = [int(self.seq_bin[i]) for i in range(self.longueur)]
                 x_bin = [i for i in range(0, self.longueur * 10, 10)]
-                self.c1.step(x_bin, bin)
+                self.c2.step(x_bin, bin)
 
                 ########courbe analogique
                 x_new = np.linspace(1, int(self.longueur / 4), 300)
                 a_BSpline = interpolate.make_interp_spline(self.abscisse, self.V_sortie)
                 V_s = a_BSpline(x_new)
-                #self.c2.ylabel("Tension (V)")
-                self.c2.plot(x_new, V_s)
+                self.c1.plot(x_new, V_s)
 
                 self.canvas.draw()
                 self.can1.draw()
@@ -194,7 +210,7 @@ class Application:
         return verified
 
     def browse_nd_read(self):
-        file = tk.filedialog.askopenfile(mode="r")
+        file = tk.filedialog.askopenfile(mode="r",filetypes=[('', '.txt')])
         if (file is not None):
             print(type(file))
             self.seqbin = file.read()
